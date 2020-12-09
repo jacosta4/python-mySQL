@@ -1,5 +1,6 @@
 import mysql.connector
 import pyFuncs
+import json
 
 mydb = mysql.connector.connect(
     host = 'localhost',
@@ -21,6 +22,8 @@ def create_user(username, first_name, last_name, age, email, country, join_date)
 
     mydb.close()
 
+
+# Función mostrar todos los usuarios
 def show_all_users():
     query = """
             SELECT user_ID, username, join_date
@@ -32,6 +35,25 @@ def show_all_users():
         print(row)
     mydb.commit()
     mydb.close()
+
+
+# Función para ver la info de un usuario
+def show_user(username1):
+    query = """
+            SELECT user_ID, username, first_name, last_name, age,
+                    email, country, join_date
+            FROM users
+            WHERE username = %s
+            """
+    cursor.execute(query, (username1,))
+    rows = cursor.fetchone()
+    for key, value in rows.items():
+        print(f"{key} : \t{value}")
+    # print (json.dumps(rows, indent=4))
+    mydb.commit()
+    mydb.close()
+
+
 
 # buscar username en db
 def search_username(username1):
@@ -47,5 +69,17 @@ def search_username(username1):
         return f"Username dont exists"
     else:
         return f"Username already exists"
+    mydb.commit()
+    mydb.close()
+
+
+# Get user id
+def get_user_id(username1):
+    query = """
+            SELECT user_ID FROM users WHERE username = %s
+            """
+    values = (username1,)
+    cursor.execute(query, values)
+    print(cursor.fetchone())
     mydb.commit()
     mydb.close()
