@@ -23,6 +23,20 @@ if user_vali == 'Username dont exists':
     print('\nUser created successfully')
 else:
     print('User exits')
+    update = pyip.inputYesNo(prompt='Do want to see your data?(yes/no): \n')
+    if update == 'yes':
+        # print("Let's update some data")
+        # update_choice = pyip.inputMenu(['username', 'first_name', 'last_name',
+        #     'age', 'email', 'country'], numbered=True)
+        # update_value = pyip.inputStr(f'Enter your new {update_choice}: ')
+        # db.update_data(update_choice, update_value, username1)
+        # funcion de actualizar
+        # print('data updated')
+        db.show_user(username1)
+    else:
+        print('Thank you, have a good day!')
+
+print('\nThank you, have a good day!')
 
 
 # Mostrar usuarios base de datos
