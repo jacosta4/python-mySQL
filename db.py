@@ -54,7 +54,6 @@ def show_user(username1):
     mydb.close()
 
 
-
 # buscar username en db
 def search_username(username1):
     query = """
@@ -81,5 +80,57 @@ def get_user_id(username1):
     values = (username1,)
     cursor.execute(query, values)
     print(cursor.fetchone())
+    mydb.commit()
+    mydb.close()
+
+
+# Actualizar datos
+def update_data_username(update_value, username1):
+    query = "UPDATE users SET username = %s WHERE username = %s"
+    cursor.execute(query, (update_value, username1))
+    mydb.commit()
+    mydb.close()
+
+
+def update_data_first_name(update_value, username1):
+    query = "UPDATE users SET first_name = %s WHERE username = %s"
+    cursor.execute(query, (update_value, username1))
+    mydb.commit()
+    mydb.close()
+
+
+def update_data_last_name(update_value, username1):
+    query = "UPDATE users SET last_name = %s WHERE username = %s"
+    cursor.execute(query, (update_value, username1))
+    mydb.commit()
+    mydb.close()
+
+
+def update_data_age(update_value, username1):
+    query = "UPDATE users SET age = %s WHERE username = %s"
+    cursor.execute(query, (update_value, username1))
+    mydb.commit()
+    mydb.close()
+
+
+def update_data_email(update_value, username1):
+    query = "UPDATE users SET email = %s WHERE username = %s"
+    cursor.execute(query, (update_value, username1))
+    mydb.commit()
+    mydb.close()
+
+
+def update_data_country(update_value, username1):
+    query = "UPDATE users SET country = %s WHERE username = %s"
+    cursor.execute(query, (update_value, username1))
+    mydb.commit()
+    mydb.close()
+
+
+# Borrar usuario
+def delete_user(username1):
+    query = "DELETE FROM users WHERE username = %s"
+    value = (username1,)
+    cursor.execute(query, value)
     mydb.commit()
     mydb.close()
