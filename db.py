@@ -2,6 +2,7 @@ import mysql.connector
 import pyFuncs
 import json
 
+
 mydb = mysql.connector.connect(
     host = 'localhost',
     user = 'guest_user',
@@ -11,6 +12,7 @@ mydb = mysql.connector.connect(
 
 cursor = mydb.cursor(dictionary=True)
 
+# def create_user(username, first_name, last_name, age, email, country, join_date):
 def create_user(username, first_name, last_name, age, email, country, join_date):
     sql = """
         INSERT INTO users (username, first_name, last_name,
