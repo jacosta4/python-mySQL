@@ -1,7 +1,9 @@
 # Python y SQL utilizando MySQL
 
 ## Descripción ##
-En este repositorio encontrarás un ejercicio escrito en Python, utilizando MySQL como sistema de gestión de base de datos.
+En este repositorio encontrarás un ejercicio escrito en Python, utilizando MySQL como sistema de gestión de base de datos. Simula el ingreso de un usuario a una plataforma, donde se le pregunta
+al usuario un "username" y se le da la posibilidad de actualizar, crear, ver o eliminar los
+datos de la base de datos. 
 
 ## Pre-requisitos ##
 Es necesario tener instalado Python 3.
@@ -29,6 +31,6 @@ Para instalar los requierimietos:
 `pip install -r requirements.txt`
 
 ## Autor ##
-- Juan Camilo Acosta - jacosta4
+- Juan Camilo Acosta - @jacosta4
 
-###End
+### End ###
